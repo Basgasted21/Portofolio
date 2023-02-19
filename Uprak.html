@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eBook - Ujian Praktek</title>
+    <link rel="shortcut icon" href="logo-telkom-schools-bundar-1024x1024.png" type="image/x-icon">
+    <style>
+        *,
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+        
+        a:hover {
+            color: white;
+        }
+        
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+       .container {
+            height: 100vh;
+            align-items: center;
+            margin: auto;
+            width: 100%;
+        }
+        
+        .header {
+            background: lightgrey;
+            height: 50px;
+            width: 100vw;
+        }
+        
+        .linku li {
+            display: table-cell;
+            padding: 10px 40px;
+            list-style-type: none;
+        }
+        
+        .linku li img {
+            max-height: 30px;
+            margin-right: 500px;
+        }
+        
+        .linku li span {
+            vertical-align: top;
+        }
+        
+        .contents {
+            margin: 40px;
+        }
+        
+        .title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-decoration: none;
+            border: 5px solid;
+            padding: 10px;
+            width: 500px;
+            margin: auto;
+            border-radius: 15px;
+            background-color: lightgray;
+        }
+        
+        .logo {
+            background: url("gaslyLogo.jpg");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 150px;
+            width: 150px;
+            border: 2px solid black;
+            border-radius: 100px;
+        }
+        
+        .namalen {
+            text-align: center;
+            border: 4px solid black;
+            width: 350px;
+            padding: 10px;
+            margin-top: 80px;
+            font-size: 24px;
+            font-weight: bold;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: x-large;
+        }
+        
+        .rpl-img {
+            background: black;
+            text-align: center;
+            border: 2px solid white;
+            box-shadow: white 2px 2px;
+            width: 900px;
+            height: 500px;
+            margin: auto;
+            margin-top: 80px;
+            display: flex;
+            justify-content: center;
+            border-radius: 10px;
+        }
+        
+        .gambar {
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 1000px;
+            height: 300px;
+        }
+        
+        .one {
+            background-image: url("3426526.jpg");
+        }
+        
+        .two {
+            background-image: url("10838789_4548450.jpg");
+        }
+        
+        .three {
+            background-image: url("3323619.jpg");
+        }
+        
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 120%;
+            width: auto;
+            padding: 16px;
+            color: black;
+            font-weight: bold;
+            font-size: 25px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+        
+        .prev:hover,
+        .next:hover {
+            background-color: darkgray;
+        }
+        
+        .prev {
+            left: 24%;
+        }
+        
+        .next {
+            right: 24%;
+        }
+        
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+        
+        .gambar {
+            height: inherit;
+        }
+        
+        .materi-container {
+            padding: 45px;
+            border-radius: 10px;
+            position: absolute;
+            top: 9%;
+            right: 10%;
+        }
+        
+        .dropu {
+            position: relative;
+            display: inline-block;
+            border: none;
+            width: 100px;
+        }
+        
+        .dropbtn {
+            background-color: gray;
+            color: rgb(255, 255, 255);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: bold;
+            border-radius: 15px;
+            padding: 20px;
+            padding-left: 30px;
+            padding-right: 30px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .dropu-content {
+            display: none;
+            position: absolute;
+            background-color: lightgray;
+            font-family: 'system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif';
+            font-weight: bold;
+            min-width: inherit;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 15px;
+        }
+        
+        .dropu-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .dropu-content a:hover {
+            background-color: #ddd;
+        }
+        
+        .dropu:hover .dropu-content {
+            display: block;
+        }
+        /* color changes on hover */
+        
+        .dropu:hover .dropbtn {
+            background-color: lightgray;
+        }
+        
+        .materi {
+            margin: auto;
+            width: 1000px;
+            height: 100vh;
+        }
+
+        img {
+            width: 50px;
+            height: 30px;
+        }
+
+        #copyright {
+        text-align: center;
+        width: 100%;
+        padding: 50px 0px 50px 0px;
+        margin-top: 50px;
+}
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="header">
+                <ul class="linku">
+                    <li>
+                        <a href="https://instagram.com/bgasrad_" target="_blank"><img src="580b57fcd9996e24bc43c521.png" alt="instagram"></a>
+                    </li>
+                    <li>
+                        <a href="mailto:bagasraditya067@gmail.com" target="_blank"><img src="gmail-new-2020-logo-32DBE11BB4-seeklogo.com.png" alt="mail"></a>
+                    </li>
+                </ul>
+            </div>
+            <hr size="6px" color="black">
+            <hr>
+            <div class="contents">
+                <div class="title">Mata Pelajaran PWPB</div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="logo"></div>
+                <div class="namalen">FAUSTA BAGAS RADITYA</div>
+                <br>
+                <br>
+                <div class="rpl-img">
+                    <div class="gambar fade one" id="1"></div>
+                    <div class="gambar fade two" id="2"></div>
+                    <div class="gambar fade three" id="3"></div>
+                    <div class="change">
+                        <a class="prev" onclick="plusSlides(-1)">❮</a>
+                        <a class="next" onclick="plusSlides(1)">❯</a>
+                    </div>
+                </div>
+                <div id="copyright">
+                    <div class="">
+                        &copy; 2022. <b>Ujian Praktek PWPB</b> All Rights Reserved.
+                    </div>
+                </div>
+                
+            </div>
+            <div class="materi-container">
+                <div class="dropu">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <button class="dropbtn">Materi</button>
+                    <div class="dropu-content">
+                        <a href="#">BAB 2 FORMAT TEXT</a>
+                        <a href="File3.html">BAB 3 FORMAT TABLE</a>
+                        <a href="#">BAB 4 MULTI MEDIA</a>
+                        <a href="#">BAB 5 HYPERLINK</a>
+                        <a href="#">BAB 6 FORMULIR</a>
+                        <a href="#">BAB 7 CSS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("gambar");
+
+        if (n > slides.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+    }
+
+    
+</script>
+
+</html>
